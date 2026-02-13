@@ -1,0 +1,135 @@
+.hero {
+  position: relative;
+  min-height: 75vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-3xl) var(--space-xl);
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  background: var(--color-surface) url("/hero-image.jpg") center / cover no-repeat;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+  max-width: 560px;
+  color: var(--color-promo);
+}
+
+.hero__eyebrow {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-promo);
+  margin-bottom: var(--space-md);
+  opacity: 0.9;
+}
+
+.hero__title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 500;
+  margin: 0 0 var(--space-lg);
+  letter-spacing: 0.02em;
+  color: var(--color-promo);
+}
+
+.hero__subtitle {
+  font-size: 1.1rem;
+  color: var(--color-promo);
+  margin: 0 0 var(--space-2xl);
+  font-weight: 300;
+  opacity: 0.95;
+}
+
+.hero__cta {
+  display: inline-block;
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  padding: var(--space-md) var(--space-xl);
+  border: 1px solid var(--color-promo);
+  color: var(--color-promo);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.hero__cta:hover {
+  background: var(--color-promo);
+  color: var(--color-surface);
+}
+
+.new-arrivals {
+  padding: var(--space-3xl) 0;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.section-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 0 var(--space-xl) var(--space-xl);
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.section-link {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.section-link:hover {
+  color: var(--color-text);
+}
+
+.new-arrivals__scroll {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.new-arrivals__scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.new-arrivals__track {
+  display: flex;
+  gap: var(--space-xl);
+  padding: 0 var(--space-xl);
+  width: max-content;
+}
+
+.new-arrivals__track > * {
+  flex-shrink: 0;
+}
+
+/* Mobile: New Arrivals as grid instead of horizontal scroll */
+@media (max-width: 768px) {
+  .new-arrivals__scroll {
+    overflow: visible;
+  }
+
+  .new-arrivals__track {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-lg);
+    width: 100%;
+    padding: 0 var(--space-xl);
+  }
+
+  .new-arrivals__track > * {
+    width: auto;
+  }
+}

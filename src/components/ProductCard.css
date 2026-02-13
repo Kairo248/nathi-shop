@@ -1,0 +1,112 @@
+.product-card {
+  flex-shrink: 0;
+}
+
+.product-card__link {
+  display: block;
+  color: inherit;
+}
+
+.product-card__image-wrap {
+  position: relative;
+  aspect-ratio: 1;
+  overflow: hidden;
+  background: var(--color-border);
+}
+
+.product-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.product-card__link:hover .product-card__image {
+  transform: scale(1.03);
+}
+
+.product-card__badge {
+  position: absolute;
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.product-card__badge--new {
+  top: var(--space-sm);
+  left: var(--space-sm);
+  padding: var(--space-xs) var(--space-sm);
+  background: var(--color-surface);
+  color: var(--color-text-muted);
+}
+
+.product-card__badge--tag {
+  top: var(--space-sm);
+  right: var(--space-sm);
+  padding: var(--space-xs) var(--space-sm);
+}
+
+.product-card__badge--special {
+  background: var(--color-special);
+  color: var(--color-surface);
+}
+
+.product-card__badge--promo {
+  background: var(--color-promo);
+  color: var(--color-surface);
+}
+
+.product-card__body {
+  padding: var(--space-lg) 0 0;
+}
+
+.product-card__category {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-xs);
+}
+
+.product-card__name {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 0 0 var(--space-sm);
+}
+
+.product-card__price {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.product-card__price--special {
+  color: var(--color-special);
+}
+
+.product-card__price--promo {
+  color: var(--color-promo);
+}
+
+/* Compact variant for horizontal scroll (desktop) */
+.product-card--compact {
+  width: min(280px, 70vw);
+}
+
+.product-card--compact .product-card__body {
+  padding-top: var(--space-md);
+}
+
+.product-card--compact .product-card__name {
+  font-size: 1rem;
+}
+
+/* In grid context (e.g. mobile New Arrivals), compact card fills cell */
+@media (max-width: 768px) {
+  .new-arrivals__track .product-card--compact {
+    width: 100%;
+  }
+}
